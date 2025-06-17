@@ -1,5 +1,6 @@
 
 'use client';
+import Image from 'next/image';
 
 export default function StoryList() {
   const dummyStories = [
@@ -9,11 +10,11 @@ export default function StoryList() {
 
   return (
     <div className="mt-8">
-      <h2 className="text-lg font-bold">Other People's Stories</h2>
+      <h2 className="text-lg font-bold">Other Stories</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
         {dummyStories.map((story, idx) => (
           <div key={idx} className="border p-2 rounded">
-            <img src={story.image} alt="user upload" className="w-full h-48 object-cover" />
+            <Image src="/your-image.jpg" alt="Description" width={600} height={400} />
             <p className="mt-2">{story.text}</p>
           </div>
         ))}
