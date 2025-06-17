@@ -1,1 +1,1 @@
-# mosaic-website
+mosaic-website
