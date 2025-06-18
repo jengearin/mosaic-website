@@ -1,11 +1,10 @@
 @import "tailwindcss";
 
-
 :root {
   --background: #ffffff;
   --foreground: #1f2937; /* darker neutral gray for better readability */
-  --accent: #6366f1; /* a soft indigo */
-  --accent-hover: #4f46e5;
+  --accent: oklch(44.6% 0.043 257.281); 
+  --accent-hover: oklch(37.2% 0.044 257.287);
   --muted: #6b7280;
 
   --font-sans: "Segoe UI", Roboto, Arial, Helvetica, sans-serif;
@@ -36,7 +35,7 @@ a:hover {
 }
 
 nav {
-  margin: 2rem 0;
+  margin: 0.5rem 0;
   display: flex;
   gap: 1rem;
   font-size: 1rem;
