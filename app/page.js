@@ -3,17 +3,22 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <>
-     
-      <main className="p-8">
-        <h1 className="text-3xl font-bold mb-4">Mosaic</h1>
-        <p>Click a location below to share your memory:</p>
-        <ul className="mt-4 space-y-2">
-                <li><Link href="/locations/location1">Location 1</Link></li>
-                <li><Link href="/locations/location2">Location 2</Link></li>
-                <li><Link href="/locations/location3">Location 3</Link></li>
-                <li><Link href="/locations/location4">Location 4</Link></li>
-                <li><Link href="/locations/location5">Location 5</Link></li>
-                <li><Link href="/locations/location6">Location 6</Link></li>
+      <main className="p-8 max-w-xl mx-auto">
+        <h1 className="text-5xl font-extrabold mb-6 text-center">Mosaic</h1>
+        <p className="text-lg mb-8 text-center text-gray-700">
+          Click a location below to share your memory:
+        </p>
+        <ul className="list-none space-y-4">
+          {[1, 2, 3, 4, 5, 6].map((num) => (
+            <li key={num}>
+              <Link
+                href={`/locations/location${num}`}
+                className="block text-2xl text-indigo-600 font-semibold rounded-md px-6 py-3 hover:bg-indigo-100 transition"
+              >
+                Location {num}
+              </Link>
+            </li>
+          ))}
         </ul>
       </main>
     </>

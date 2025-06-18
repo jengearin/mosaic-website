@@ -205,5 +205,11 @@ li {
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem 1rem;
-  text-align: center; /* add this */
+  text-align: center; 
+}
+
+.no-bullets {
+  list-style-type: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
 }
