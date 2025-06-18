@@ -1,3 +1,6 @@
+@import "tailwindcss";
+
+
 :root {
   --background: #ffffff;
   --foreground: #1f2937; /* darker neutral gray for better readability */
