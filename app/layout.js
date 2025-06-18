@@ -1,4 +1,4 @@
-import '../styles/globals.css';  // your global styles like Tailwind or CSS resets
+ import '../styles/globals.css';  // your global styles like Tailwind or CSS resets
 import Navbar from '../components/Navbar'; // adjust path as needed
 
 export default function RootLayout({ children }) {
@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="bg-gray-50 text-gray-900 font-sans">
         <Navbar />
-        <main className="max-w-4xl mx-auto p-6">
+        <main className="container">
           {children}
         </main>
       </body>

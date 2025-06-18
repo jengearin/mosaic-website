@@ -152,8 +152,10 @@ li {
 }
 
 .upload-form {
-  margin-top: 2rem;
-  max-width: 600px;
+  max-width: 600px;      /* limit width */
+  margin-left: auto;     /* center horizontally */
+  margin-right: auto;    /* center horizontally */
+  text-align: center;    /* center text */
 }
 
 .upload-form h2 {
@@ -196,4 +198,12 @@ li {
 
 .upload-form button:hover {
   background-color: var(--accent-hover);
+}
+
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center; /* add this */
 }
