@@ -10,29 +10,32 @@ export default function UploadForm({ location }) {
     e.preventDefault();
     console.log('Submitting story:', story);
     console.log('Files:', files);
-    // Add your upload logic here
+    // TODO: Add actual upload logic
   };
 
   return (
-    <div className="mt-6">
-      <h2 className="text-xl font-semibold">Upload Your Story for {location}</h2>
-      <form className="mt-4 flex flex-col gap-4" onSubmit={handleSubmit}>
+    <div className="upload-form">
+      <h2>Upload Your Story for {location}</h2>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="file-upload">Select image(s):</label>
         <input
+          id="file-upload"
           type="file"
           multiple
           accept="image/*"
           onChange={(e) => setFiles(e.target.files)}
         />
+
+        <label htmlFor="story-text">Your story:</label>
         <textarea
+          id="story-text"
           placeholder="Tell me a story..."
           rows={4}
-          className="border p-2"
           value={story}
           onChange={(e) => setStory(e.target.value)}
         />
-        <button type="submit" className="bg-blue-600 text-white p-2 rounded">
-          Submit
-        </button>
+
+        <button type="submit">Submit</button>
       </form>
     </div>
   );

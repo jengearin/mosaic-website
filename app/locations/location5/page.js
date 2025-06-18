@@ -1,4 +1,3 @@
-import Navbar from '../../../components/Navbar';
 import UploadForm from '../../../components/UploadForm';
 import StoryList from '../../../components/StoryList';
 

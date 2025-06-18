@@ -1,4 +1,3 @@
-
 'use client';
 import Image from 'next/image';
 
@@ -9,13 +8,19 @@ export default function StoryList() {
   ];
 
   return (
-    <div className="mt-8">
-      <h2 className="text-lg font-bold">Other Stories</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+    <div className="story-list">
+      <h2>Other Stories</h2>
+      <div className="story-grid">
         {dummyStories.map((story, idx) => (
-          <div key={idx} className="border p-2 rounded">
-            <Image src="/your-image.jpg" alt="Description" width={600} height={400} />
-            <p className="mt-2">{story.text}</p>
+          <div key={idx} className="story-card">
+            <Image
+              src={story.image}
+              alt={`Story ${idx + 1}`}
+              width={600}
+              height={400}
+              className="story-image"
+            />
+            <p>{story.text}</p>
           </div>
         ))}
       </div>
