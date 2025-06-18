@@ -8,7 +8,7 @@ export default function Home() {
         <p className="text-lg mb-8 text-center text-gray-700">
           Click a location below to share your memory:
         </p>
-        <ul className="list-none space-y-4">
+        <ul className="no-bullets space-y-4">
           {[1, 2, 3, 4, 5, 6].map((num) => (
             <li key={num}>
               <Link
