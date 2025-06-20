@@ -5,6 +5,7 @@ import Image from 'next/image';
 export default function StoryList({ location }) {
   const [stories, setStories] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [expandedIndexes, setExpandedIndexes] = useState({});
 
   useEffect(() => {
     async function fetchStories() {
@@ -22,14 +23,22 @@ export default function StoryList({ location }) {
     fetchStories();
   }, [location]);
 
-  // helper function to convert view link → direct download link
+  // Convert Google Drive "view" link to direct download link
   function convertToDirectDownload(url) {
     const match = url?.match(/\/d\/(.+?)\//);
     if (match && match[1]) {
       const fileId = match[1];
       return `https://drive.google.com/uc?export=download&id=${fileId}`;
     }
-    return url; // fallback if not a Drive view link
+    return url;
+  }
+
+  // Toggle whether full text is shown for a story
+  function toggleExpand(idx) {
+    setExpandedIndexes(prev => ({
+      ...prev,
+      [idx]: !prev[idx]
+    }));
   }
 
   if (loading) return <p>Loading stories...</p>;
@@ -43,6 +52,10 @@ export default function StoryList({ location }) {
         <div className="story-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[...stories].reverse().map((story, idx) => {
             const imageUrl = convertToDirectDownload(story.imageUrl);
+            const isExpanded = expandedIndexes[idx];
+            const isLong = story.story.length > 150;
+            const previewText = story.story.slice(0, 150);
+
             return (
               <div key={idx} className="story-card border p-4 rounded-xl shadow">
                 <Image
@@ -52,7 +65,17 @@ export default function StoryList({ location }) {
                   height={400}
                   className="story-image rounded-md"
                 />
-                <p className="mt-2">{story.story}</p>
+                <p className="mt-2 whitespace-pre-line">
+                  {isExpanded || !isLong ? story.story : `${previewText}...`}
+                </p>
+                {isLong && (
+                  <button
+                    onClick={() => toggleExpand(idx)}
+                    className="text-blue-600 hover:underline mt-1"
+                  >
+                    {isExpanded ? 'Show less' : 'Read more'}
+                  </button>
+                )}
               </div>
             );
           })}
