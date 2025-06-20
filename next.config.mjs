@@ -1,13 +1,13 @@
-
-export default nextConfig;
-module.exports = {
+const nextConfig = {
   images: {
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'drive.google.com',
-        pathname: '/uc',
+        pathname: '/**',
       },
     ],
   },
 };
+
+export default nextConfig;
