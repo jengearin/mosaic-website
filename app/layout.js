@@ -12,6 +12,20 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main className="container">
           {children}
+      <footer
+        id="contact"
+        className="text-center mt-16 p-4 bg-gray-50 border-t border-gray-200"
+      >
+        <p className="text-sm text-gray-600">
+          Contact:{' '}
+          <a
+            href="mailto:mosaic.jgearin@gmail.com"
+            className="text-indigo-600 hover:underline"
+          >
+            mosaic.jgearin@gmail.com
+          </a>
+        </p>
+      </footer>
         </main>
       </body>
     </html>
