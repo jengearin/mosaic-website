@@ -4,7 +4,7 @@ import UploadForm from '../../../components/UploadForm';
 import StoryList from '../../../components/StoryList';
 
 export default function LocationPage() {
-  const hardcodedLocation = 'location6';
+  const hardcodedLocation = 'Downtown Melbourne';
 
   return (
     <main className="p-8 max-w-4xl mx-auto">
