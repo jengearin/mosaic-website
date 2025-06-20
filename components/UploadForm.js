@@ -24,7 +24,7 @@ export default function UploadForm({ location }) {
       const base64Image = reader.result;
 
       try {
-        const response = await fetch('https://script.google.com/macros/s/AKfycbxFO9rUoG1L4GjxDcGmUoeWiayz3YDhPGTqQN0_YUvCHmadcCPM7zxnpRwCI5hMQUOQlA/exec', {
+        const response = await fetch('https://script.google.com/macros/s/AKfycbwCaEqPJ7yAXCzGhQMrIVh2x4DOiP1aA_1UzK0McLxRDnh1kkWHTC9X_PsyABwXQKhnCg/exec', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
