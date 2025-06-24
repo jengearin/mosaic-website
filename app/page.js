@@ -12,30 +12,60 @@ export default function Home() {
 
   return (
     <>
-      <main className="max-w-10xl mx-auto min-h-[calc(100vh-80px)]">
-        <h1 className="text-20xl font-serif font-extrabold mb-4 text-center">Mosaic</h1>
+      <main className="max-w-4xl mx-auto min-h-[calc(100vh-80px)] px-4 py-12 sm:px-6 lg:px-8">
+        {/* Hero Section */}
+        <div className="text-center mb-12">
+          {/* Main Heading: Larger, bolder, custom font (assuming you'll define a custom font later or use a strong sans-serif) */}
+          <h1 className="text-6xl sm:text-7xl lg:text-8xl font-serif font-extrabold text-gray-900 leading-tight mb-4 tracking-tight">
+            Mosaic
+          </h1>
 
-        <p className="text-md text-center text-gray-600 mb-6 italic">
-          Every place holds a story.
-        </p>
+          {/* Tagline: Italicized, slightly larger, subtle color */}
+          <p className="text-xl sm:text-2xl text-gray-600 mb-8 italic">
+            Every place holds a story.
+          </p>
 
-        <p className="text-lg text-center text-gray-700 mb-8 text-left">
-          <span className="block mb-2">
-            <em>Mosaic</em> invites you to capture a meaningful place in your community and share the memory behind it.
-          </span >
-          Add your voice to a growing collective of local reflections—one story, one photo, one space at a time.
-        </p>
+          {/* Descriptive Text: Left-aligned for readability, increased line-height */}
+          <p className="text-lg sm:text-xl text-gray-700 leading-relaxed text-left max-w-2xl mx-auto">
+            <span className="block mb-4">
+              <em className="font-semibold text-black-700">Mosaic</em> invites you to capture a meaningful place in your community and share the memory behind it.
+            </span>
+            Add your voice to a growing collective of local reflections—one story, one photo, one space at a time.
+          </p>
+        </div>
 
-        <p className="text-xl mb-6 text-center text-gray-700">
+        {/* Call to Action for Locations */}
+        <p className="text-xl sm:text-2xl font-semibold text-gray-800 mb-8 text-center">
           Click a location below to share your memory:
         </p>
 
-        <ul className="no-bullets list-none space-y-4">
+        {/* Locations List - now styled as proper buttons in a grid on larger screens */}
+        <ul className="list-none p-0 m-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {places.map((place, idx) => (
-            <li key={idx}>
+            <li key={idx} className="flex justify-center">
               <Link
                 href={`/locations/location${idx + 1}`}
-                className="block text-2xl text-indigo-600 font-semibold rounded-md px-6 py-3 hover:bg-indigo-100 transition"
+                className="
+                  flex-grow
+                  text-center
+                  bg-slate-300
+                  hover:bg-slate-500
+                  text-white
+                  font-bold
+                  py-4
+                  px-6
+                  rounded-lg
+                  shadow-lg
+                  hover:shadow-xl
+                  transition
+                  duration-300
+                  ease-in-out
+                  transform
+                  hover:-translate-y-1
+                  text-lg sm:text-xl
+                  whitespace-nowrap
+                  truncate
+                "
               >
                 {place}
               </Link>
