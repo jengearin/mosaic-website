@@ -67,7 +67,7 @@ export default function UploadForm({ location }) {
 
   return (
     <div className="upload-form mt-8">
-      <h2 className="text-xl font-bold mb-4">Upload Your Story for {location}</h2>
+      <h2 className="text-xl font-serif font-bold mb-4">Upload Your Story for {location}</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label htmlFor="file-upload" className="block font-medium">Select image:</label>

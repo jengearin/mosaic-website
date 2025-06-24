@@ -45,7 +45,7 @@ export default function StoryList({ location }) {
 
   return (
     <div className="story-list mt-8">
-      <h2 className="text-2xl font-semibold mb-4">Other Stories</h2>
+      <h2 className="text-2xl font-serif font-semibold mb-4">Other Stories</h2>
       {stories.length === 0 ? (
         <p>No stories yet for this location.</p>
       ) : (

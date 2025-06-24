@@ -8,12 +8,12 @@ export default function LocationPage() {
 
   return (
     <main className="p-8 max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold mb-6 text-center">
+      <h1 className="text-4xl font-serif font-bold mb-6 text-center">
         Share your story for {hardcodedLocation}
       </h1>
 
       <p className="text-xl mb-6 text-center">
-        What does this place mean to you? Share your story below.
+        Ulumay is more than a sanctuary, it’s a quiet witness to life unfolding. What moment brought you peace here?
       </p>
 
       <UploadForm location={hardcodedLocation} />
