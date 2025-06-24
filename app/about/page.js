@@ -2,7 +2,7 @@ export default function About() {
   return (
     <>
       <main className="p-8 max-w-3xl mx-auto">
-        <h1 className="text-3xl font-extrabold mb-4">About the Mosaic Project</h1>
+        <h1 className="text-3xl font-serif font-extrabold mb-4">About the Mosaic Project</h1>
         <p className="text-lg text-gray-700 mb-6 text-left">
           <em>Mosaic</em> is a community storytelling initiative aimed at celebrating and preserving the everyday meaning embedded in the spaces we share.
         </p>
@@ -13,7 +13,7 @@ export default function About() {
           This project fosters connection, engagement, and a shared sense of identity. It honors the voices of all generations and reminds us that personal stories are powerful, worthy of preservation, and essential to understanding who we are as a community.
         </p>
 
-        <h2 className="text-2xl font-bold mt-10 mb-4">About Me</h2>
+        <h2 className="text-2xl font-serif font-bold mt-10 mb-4">About Me</h2>
         <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
           <div>
             <p className="text-lg text-gray-700 mb-4 text-left">
