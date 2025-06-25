@@ -28,7 +28,7 @@ export default function About() {
             <div className="rounded-lg overflow-hidden shadow-xl">
               <Image
                 src={headshotUrl}
-                alt="Jennifer Gearin Headshot"
+                alt="Jennifer Gearin Photo"
                 width={400}
                 height={400}
                 className="w-full h-auto object-cover"
@@ -40,7 +40,7 @@ export default function About() {
           {/* FIRST About Me Text Paragraph Container */}
           <div className="w-full md:w-2/3">
             <p className="text-lg text-gray-700 text-left leading-relaxed">
-              Hi! I’m Jennifer Gearin, a student at the University of Connecticut studying Physics and Psychology. I grew up in Brevard County, Florida, and many of my favorite memories are rooted in its parks, neighborhoods, and coastlines. This community shaped who I am and how I see the world.
+              Jennifer Gearin is a student at the University of Connecticut, where she is studying Physics and Linguistics/Psychology. She created <em>Mosaic</em>, an entrepreneurial pilot project supported by the Werth Institute and developed as part of the First-Year Women Werth Innovators cohort.
             </p>
           </div>
         </div>
@@ -49,10 +49,13 @@ export default function About() {
         {/* These two paragraphs are now OUTSIDE the flex container,
             so they will appear below the image and first paragraph */}
         <p className="text-lg text-gray-700 mb-4 text-left leading-relaxed">
-          I started <em>Mosaic</em> because I care deeply about the stories people carry. I believe that the meaning we find in place is personal and powerful, and I wanted to create a space where people could share those stories in a way that feels easy and meaningful. I love anything that brings people together through creativity and reflection.
+          Though Connecticut has found a place in her heart, Jennifer calls Merritt Island, Florida, home. Growing up in Brevard County, many of her most meaningful memories are rooted in the area’s parks, neighborhoods, and coastlines. This landscape shaped who she is and the way she sees the world.
+        </p>
+        <p className="text-lg text-gray-700 mb-4 text-left leading-relaxed">
+          Jennifer started <em>Mosaic</em> because she cares deeply about the stories people carry. She believes that the meaning we find in location is personal and powerful, and she wanted to create a space where people could share these stories in a way that fosters connection, reflection, and a deeper understanding of community. Her work is driven by a love of creativity, compassionate connection, and spaces that invite people to be heard.
         </p>
         <p className="text-lg text-gray-700 text-left leading-relaxed">
-          When I’m not working on projects like this, I’m usually figure skating, painting, or looking up at the stars.
+         When she isn’t working on <em>Mosaic</em>, Jennifer can often be found figure skating, painting, sitting on the beach, or stargazing.
         </p>
       </main>
     </>
