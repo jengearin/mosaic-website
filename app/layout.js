@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="bg-gray-50 text-gray-900 font-sans">
         <Navbar />
-        <main className="container">
+        <main className="w-full">
           {children}
       <footer
         id="contact"

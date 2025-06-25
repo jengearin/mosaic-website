@@ -35,12 +35,12 @@ export default function Home() {
         </div>
 
         {/* Call to Action for Locations */}
-        <p className="text-xl sm:text-2xl font-semibold text-gray-800 mb-8 text-center">
+        <p className="text-xl sm:text-2xl font-serif font-semibold text-gray-800 mb-8 text-center">
           Click a location below to share your memory:
         </p>
 
         {/* Locations List - now styled as proper buttons in a grid on larger screens */}
-        <ul className="list-none p-0 m-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <ul className="list-none grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
           {places.map((place, idx) => (
             <li key={idx} className="flex justify-center">
               <Link

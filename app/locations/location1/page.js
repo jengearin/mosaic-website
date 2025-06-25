@@ -18,7 +18,7 @@ export default function LocationPage() {
       </h1>
 
       {/* Image at the top */}
-      <div className="mb-8 rounded-lg overflow-hidden shadow-xl">
+      <div className="mb-8 mx-50 rounded-lg overflow-hidden shadow-xl">
         <Image
           src={spaceViewParkImageUrl} // Use the string URL directly
           alt={`Scenic view of ${hardcodedLocation}`}
