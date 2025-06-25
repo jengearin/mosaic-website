@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-const headshotUrl = '/images/headshot.png'; // Assuming your headshot is in public/images/headshot.png
+const headshotUrl = '/images/Headshot.png'; // Assuming your headshot is in public/images/headshot.png
 
 export default function About() {
   return (
