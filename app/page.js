@@ -7,7 +7,6 @@ export default function Home() {
     "Lake Washington Park",
     "Lori Wilson Park",
     "Cocoa Village",
-    "Downtown Melbourne",
   ];
 
   return (
