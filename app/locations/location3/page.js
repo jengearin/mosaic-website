@@ -11,11 +11,11 @@ export default function LocationPage() {
 
   return (
     <main className="p-8 max-w-4xl mx-auto">
-      <h1 className="text-4xl font-serif font-bold mb-6 text-center">
+      <h6 className="text-4xl font-serif font-bold mb-6 text-center">
         Share your story for {hardcodedLocation}
-      </h1>
+      </h6>
               {/* Image at the top */}
-              <div className="mb-8 mx-50 rounded-lg overflow-hidden shadow-xl">
+              <div className="mt-10 mb-8 mx-50 rounded-lg overflow-hidden shadow-s">
                 <Image
                   src={lakeWashingtonParkImageUrl} // Use the string URL directly
                   alt={`Scenic view of ${hardcodedLocation}`}
