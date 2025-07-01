@@ -15,7 +15,7 @@ export default function LocationPage() {
         Share your story for {hardcodedLocation}
       </h6>
       {/* Image at the top */}
-      <div className="mt-10 mb-8 mx-50 rounded-lg overflow-hidden shadow-s">
+      <div className="mt-10 mb-8 mx-60 rounded-lg overflow-hidden shadow-s">
         <Image
           src={ulumayImageUrl} // Use the string URL directly
           alt={`Scenic view of ${hardcodedLocation}`}
