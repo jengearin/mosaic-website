@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <main className="max-w-4xl mx-auto min-h-[calc(100vh-80px)] px-4 py-12 sm:px-6 lg:px-8">
         {/* Hero Section */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-6">
           {/* Main Heading: Larger, bolder, custom font (assuming you'll define a custom font later or use a strong sans-serif) */}
           <h1 className="text-6xl sm:text-7xl lg:text-8xl font-serif font-extrabold text-gray-900 leading-tight mb-4 tracking-tight">
             Mosaic
@@ -33,9 +33,14 @@ export default function Home() {
           </p>
         </div>
 
+        {/* Call to Action for General Submission*/}
+        <p className="text-xl sm:text-2xl font-serif font-semibold text-gray-800 mb-8 text-center">
+          Tell us about yours:
+        </p>
+
         {/* Call to Action for Locations */}
         <p className="text-xl sm:text-2xl font-serif font-semibold text-gray-800 mb-8 text-center">
-          Click a location below to share your memory:
+          Or click a location below to share your memory:
         </p>
 
         {/* Locations List - now styled as proper buttons in a grid on larger screens */}

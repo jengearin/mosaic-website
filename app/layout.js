@@ -1,5 +1,6 @@
  import '../styles/globals.css';  // your global styles like Tailwind or CSS resets
 import Navbar from '../components/Navbar'; // adjust path as needed
+import { Analytics } from "@vercel/analytics/next"
 
 export default function RootLayout({ children }) {
   return (
@@ -27,6 +28,22 @@ export default function RootLayout({ children }) {
         </p>
       </footer>
         </main>
+      </body>
+    </html>
+  );
+}
+
+
+ 
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <head>
+        <title>Next.js</title>
+      </head>
+      <body>
+        {children}
+        <Analytics />
       </body>
     </html>
   );
