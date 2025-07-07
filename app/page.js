@@ -1,6 +1,16 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
+import UploadForm from '@/components/UploadForm';
+import StoryList from '@/components/StoryList';
+import PhotoGallery from '@/components/PhotoGallery';
+import MinimalUploadForm from '@/components/MinimalUploadForm';
+import MinimalStoryList from '@/components/MinimalStoryList';
 
 export default function Home() {
+  const [showForm, setShowForm] = useState(false);
+
   const places = [
     "Space View Park",
     "Ulumay Wildlife Sanctuary Lookout",
@@ -11,20 +21,19 @@ export default function Home() {
 
   return (
     <>
+      <PhotoGallery location="Home" />
+
       <main className="max-w-4xl mx-auto min-h-[calc(100vh-80px)] px-4 py-12 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="text-center mb-6">
-          {/* Main Heading: Larger, bolder, custom font (assuming you'll define a custom font later or use a strong sans-serif) */}
           <h1 className="text-6xl sm:text-7xl lg:text-8xl font-serif font-extrabold text-gray-900 leading-tight mb-4 tracking-tight">
             Mosaic
           </h1>
 
-          {/* Tagline: Italicized, slightly larger, subtle color */}
           <p className="text-xl sm:text-2xl text-gray-600 mb-8 italic">
             Every place holds a story.
           </p>
 
-          {/* Descriptive Text: Left-aligned for readability, increased line-height */}
           <p className="text-lg sm:text-xl text-gray-700 leading-relaxed text-left max-w-2xl mx-auto">
             <span className="block mb-4">
               <em className="font-semibold text-black-700">Mosaic</em> invites you to capture a meaningful place in your community and share the memory behind it.
@@ -33,18 +42,34 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Call to Action for General Submission*/}
-        <p className="text-xl sm:text-2xl font-serif font-semibold text-gray-800 mb-8 text-center">
-          Tell us about yours:
-        </p>
+        {/* Toggleable Upload Form */}
+        <div className="text-xl sm:text-2xl font-serif font-semibold text-gray-800 mt-8 mb-3 text-center">
+          <p>
+          Tell us about yours {''}
+          <span
+          role="button"
+          tabIndex={0}
+          onClick={() => setShowForm(prev => !prev)}
+          onKeyDown={(e) => e.key === 'Enter' && setShowForm(prev => !prev)}
+          className="inline-block cursor-pointer text-xl sm:text-2xl font-serif text-slate-600 hover:text-black underline transition"
+          >
+          here
+          </span>
+          </p>
 
-        {/* Call to Action for Locations */}
-        <p className="text-xl sm:text-2xl font-serif font-semibold text-gray-800 mb-8 text-center">
+          {showForm && (
+            <div className="mt-4 transition-opacity duration-300 ease-in-out">
+             <MinimalUploadForm location="Home" />
+            </div>
+          )}
+        </div>
+
+        {/* Location-based Submission */}
+        <p className="text-xl sm:text-2xl font-serif font-semibold text-gray-800 mt-8 mb-6 text-center">
           Or click a location below to share your memory:
         </p>
 
-        {/* Locations List - now styled as proper buttons in a grid on larger screens */}
-        <ul className="list-none grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+        <ul className="list-none grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 mb-20">
           {places.map((place, idx) => (
             <li key={idx} className="flex justify-center">
               <Link
@@ -76,6 +101,9 @@ export default function Home() {
             </li>
           ))}
         </ul>
+
+        {/* Optional: Show general stories below */}
+        <MinimalStoryList location="Home" />
       </main>
     </>
   );
