@@ -22,42 +22,56 @@ export default function PhotoGallery({ location }) {
 
   return (
     <>
-      {/* Left side image column */}
-      <div className="fixed top-1/4 left-0 hidden lg:flex flex-col space-y-4 px-2 z-10">
-        {stories.map((story, idx) => (
-          <button
-            key={idx}
-            onClick={() => setSelectedStory(story)}
-            className="unstyled-hover unstyled-button hover:opacity-90"
-          >
-            <Image
-              src={convertToDirectDownload(story.imageUrl)}
-              alt={`Story ${idx + 1}`}
-              width={175}
-              height={175}
-              className="object-cover rounded-none"
-            />
-          </button>
-        ))}
-      </div>
+      <div className="hidden lg:block">
+        <div className="relative w-full">
+          {/* Left column */}
+          <div className="absolute top-0 left-0 flex flex-col space-y-4 px-2">
+            {stories
+              .filter((_, idx) => idx % 2 === 0)
+              .map((story, idx) => (
+                <span
+                  key={`left-${idx}`}
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => setSelectedStory(story)}
+                  onKeyDown={(e) => e.key === 'Enter' && setSelectedStory(story)}
+                  className="unstyled-button unstyled-hover hover:opacity-90"
+                >
+                  <Image
+                    src={convertToDirectDownload(story.imageUrl)}
+                    alt={`Story left ${idx + 1}`}
+                    width={175}
+                    height={175}
+                    className="object-cover rounded-none"
+                  />
+                </span>
+              ))}
+          </div>
 
-      {/* Right side image column */}
-      <div className="fixed top-1/4 right-0 hidden lg:flex flex-col space-y-4 px-2 z-10">
-        {stories.map((story, idx) => (
-          <button
-            key={idx}
-            onClick={() => setSelectedStory(story)}
-            className="unstyled-hover unstyled-button hover:opacity-90"
-          >
-            <Image
-              src={convertToDirectDownload(story.imageUrl)}
-              alt={`Story ${idx + 1}`}
-              width={175}
-              height={175}
-              className="object-cover rounded-none"
-            />
-          </button>
-        ))}
+          {/* Right column */}
+          <div className="absolute top-0 right-0 flex flex-col space-y-4 px-2">
+            {stories
+              .filter((_, idx) => idx % 2 !== 0)
+              .map((story, idx) => (
+                <span
+                  key={`right-${idx}`}
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => setSelectedStory(story)}
+                  onKeyDown={(e) => e.key === 'Enter' && setSelectedStory(story)}
+                  className="unstyled-button unstyled-hover hover:opacity-90"
+                >
+                  <Image
+                    src={convertToDirectDownload(story.imageUrl)}
+                    alt={`Story right ${idx + 1}`}
+                    width={175}
+                    height={175}
+                    className="object-cover rounded-none"
+                  />
+                </span>
+              ))}
+          </div>
+        </div>
       </div>
 
       {/* Modal viewer */}
