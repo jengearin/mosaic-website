@@ -21,18 +21,13 @@ export default function Home() {
 
   return (
     <>
+    <div className="absolute top-10 left-0 w-full h-[screen] z-10">
       <PhotoGallery location="Home" />
+    </div>
 
-      <main className="max-w-4xl mx-auto min-h-[calc(100vh-80px)] px-4 py-12 sm:px-6 lg:px-8">
+      <main className="max-w-4xl mx-auto min-h-[calc(100vh-80px)] px-4 py-2 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="text-center mb-6">
-          <h1 className="text-6xl sm:text-7xl lg:text-8xl font-serif font-extrabold text-gray-900 leading-tight mb-4 tracking-tight">
-            Mosaic
-          </h1>
-
-          <p className="text-xl sm:text-2xl text-gray-600 mb-8 italic">
-            Every place holds a story.
-          </p>
 
           <p className="text-lg sm:text-xl text-gray-700 leading-relaxed text-left max-w-2xl mx-auto">
             <span className="block mb-4">

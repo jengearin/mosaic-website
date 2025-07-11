@@ -3,11 +3,11 @@ import Link from 'next/link';
 
 export default function Navbar() {
   return (
-    <nav className="bg-slate-600 px-6 py-4 shadow-md">
-      <ul className="no-bullets flex gap-4">
-        <li><Link href="/" className="!text-white">Home</Link></li>
-        <li><Link href="/about" className="!text-white">About</Link></li>
-        <li><Link href="#contact" className="!text-white">Contact</Link></li>
+    <nav className="relative navbar-fade-edges w-full bg-slate-100 px-6 py-4 border-y-2 border-slate-600 max-w-3xl mx-auto">
+      <ul className="flex justify-center no-bullets gap-24 w-full">
+        <li><Link href="/" className="!text-black text-lg">Home</Link></li>
+        <li><Link href="/about" className="!text-black text-lg">About</Link></li>
+        <li><Link href="#contact" className="!text-black text-lg">Contact</Link></li>
       </ul>
     </nav>
   );

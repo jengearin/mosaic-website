@@ -19,7 +19,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   margin: 0;
-  padding: 0rem;
+  padding: 0;
   line-height: 1.6;
 }
 
@@ -35,11 +35,11 @@ a:hover {
 }
 
 nav {
-  margin: 0.5rem 0;
   display: flex;
   gap: 1rem;
   font-size: 1rem;
 }
+
 
 h1, h6, h2, h3 {
   color: var(--foreground);
@@ -242,4 +242,45 @@ li {
   list-style-type: none !important;
   padding-left: 0 !important;
   margin-left: 0 !important;
+}
+
+
+/* Add this to your globals.css file */
+
+.navbar-fade-edges {
+  /*
+    The 'relative' class from Tailwind is already added above.
+    It's essential for the absolute positioning of the pseudo-elements.
+  */
+  overflow: hidden; /* Hides any gradient overflow */
+  z-index: 1; /* Ensures the navbar stacks above other content */
+}
+
+.navbar-fade-edges::before,
+.navbar-fade-edges::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 20%; /* Adjust this to control the fade length */
+  height: 100%;
+  pointer-events: none; /* Allows clicks on elements underneath */
+  z-index: 2; /* Puts the fade on top of the links */
+}
+
+.navbar-fade-edges::before {
+  left: 0;
+  /* Gradient from transparent to the navbar's background color */
+  background: linear-gradient(to right, 
+              var(--background), /* Fades into your body's white background */
+              transparent
+              );
+}
+
+.navbar-fade-edges::after {
+  right: 0;
+  /* Gradient from the navbar's background color to transparent */
+  background: linear-gradient(to left, 
+              var(--background), /* Fades into your body's white background */
+              transparent
+              );
 }
