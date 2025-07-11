@@ -26,8 +26,8 @@ export default function RootLayout({ children }) {
         {/* Navbar */}
         <Navbar />
 
-        <p>
-          ''
+        <p className="text-xl sm:text-2xl text-white italic">
+          '. '
         </p>
 
         {/* Main content */}
