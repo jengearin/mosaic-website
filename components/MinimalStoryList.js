@@ -23,17 +23,11 @@ export default function StoryList({ location }) {
     fetchStories();
   }, [location]);
 
-  // Convert Google Drive "view" link to direct download link
   function convertToDirectDownload(url) {
     const match = url?.match(/\/d\/(.+?)\//);
-    if (match && match[1]) {
-      const fileId = match[1];
-      return `https://drive.google.com/uc?export=download&id=${fileId}`;
-    }
-    return url;
+    return match ? `https://drive.google.com/uc?export=download&id=${match[1]}` : url;
   }
 
-  // Toggle whether full text is shown for a story
   function toggleExpand(idx) {
     setExpandedIndexes(prev => ({
       ...prev,
@@ -44,27 +38,27 @@ export default function StoryList({ location }) {
   if (loading) return <p>Loading stories...</p>;
 
   return (
-    <div className="story-list mt-8">
+    <div className="story-list mt-4 px-2">
       {stories.length === 0 ? (
         <p>No stories yet for this location.</p>
       ) : (
-        <div className="story-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="columns-2 sm:columns-2 md:columns-3 lg:columns-4 gap-2 space-y-4">
           {[...stories].reverse().map((story, idx) => {
             const imageUrl = convertToDirectDownload(story.imageUrl);
             const isExpanded = expandedIndexes[idx];
-            const isLong = story.story.length > 150;
-            const previewText = story.story.slice(0, 150);
+            const isLong = story.story.length > 100;
+            const previewText = story.story.slice(0, 100);
 
             return (
-              <div key={idx} className="story-card border p-4 rounded-xl shadow">
+              <div key={idx} className="story-card break-inside-avoid border rounded-md shadow-sm p-2 leading-tight">
                 <Image
                   src={imageUrl}
                   alt={`Story ${idx + 1}`}
-                  width={600}
-                  height={400}
-                  className="story-image rounded-md"
+                  width={200}
+                  height={140}
+                  className="story-image rounded-sm w-full h-auto object-cover"
                 />
-                <p className="mt-2 whitespace-pre-line">
+                <p className="mt-1 whitespace-pre-line">
                   {isExpanded || !isLong ? story.story : `${previewText}...`}
                 </p>
                 {isLong && (

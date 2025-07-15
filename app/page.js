@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Link from 'next/link';
 import UploadForm from '@/components/UploadForm';
 import StoryList from '@/components/StoryList';
-import PhotoGallery from '@/components/PhotoGallery';
 import MinimalUploadForm from '@/components/MinimalUploadForm';
 import MinimalStoryList from '@/components/MinimalStoryList';
 
@@ -21,10 +20,6 @@ export default function Home() {
 
   return (
     <>
-    <div className="absolute top-10 left-0 w-full h-[screen] z-10">
-      <PhotoGallery location="Home" />
-    </div>
-
       <main className="max-w-4xl mx-auto min-h-[calc(100vh-80px)] px-4 py-2 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="text-center mb-6">
@@ -38,7 +33,7 @@ export default function Home() {
         </div>
 
         {/* Toggleable Upload Form */}
-        <div className="text-xl sm:text-2xl font-serif font-semibold text-gray-800 mt-8 mb-3 text-center">
+        <div className="text-xl sm:text-2xl font-serif font-semibold text-gray-800 mt-10 mb-3 text-center">
           <p>
           Tell us about yours {''}
           <span

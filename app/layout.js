@@ -1,9 +1,16 @@
 import '../styles/globals.css';
 import Navbar from '../components/Navbar';
 import Link from 'next/link';
+import PhotoGallery from '@/components/PhotoGallery';
+
 
 export default function RootLayout({ children }) {
   return (
+    
+    <>
+      <PhotoGallery location="Home" />
+
+
     <html lang="en">
       <head>
         <title>Mosaic</title>
@@ -14,10 +21,10 @@ export default function RootLayout({ children }) {
         {/* Header Block */}
         <header className="text-center pt-10 pb-4">
           <div className="flex flex-col items-center space-y-2">
-            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-serif font-extrabold text-gray-900 leading-tight tracking-tight">
+            <h1 className="text-massive text-9xl sm:text-7xl lg:text-9xl font-serif font-semibold text-gray-900 leading-tight tracking-normal">
               Mosaic
             </h1>
-            <p className="text-xl sm:text-2xl text-gray-600 italic">
+            <p className="mb-8 text-xl sm:text-2xl text-gray-500 italic">
               Every place holds a story.
             </p>
           </div>
@@ -49,5 +56,6 @@ export default function RootLayout({ children }) {
         </footer>
       </body>
     </html>
+    </>
   );
 }

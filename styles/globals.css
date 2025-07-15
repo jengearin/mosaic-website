@@ -98,6 +98,8 @@ button {
 
 .unstyled-button {
   all: unset;
+  color: none;
+  background-color: none;
   cursor: pointer;
 }
 
@@ -106,6 +108,7 @@ button:hover {
 }
 
 .unstyled-hover {
+    background-color: var(--accent-hover);
   transition: none;
 }
 
@@ -283,4 +286,22 @@ li {
               var(--background), /* Fades into your body's white background */
               transparent
               );
+}
+
+.text-massive {
+  font-size: 3.5rem; /* Adjust this value as needed, e.g., 10rem = 160px */
+  line-height: 1; /* Adjust line-height to control spacing */
+  /* You can also use viewport units for responsiveness, e.g., font-size: 15vw; */
+}
+
+
+/* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
