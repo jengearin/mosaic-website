@@ -49,7 +49,7 @@ export default function StoryList({ location }) {
       {stories.length === 0 ? (
         <p>No stories yet for this location.</p>
       ) : (
-        <div className="story-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="story-grid grid grid-cols-2! md:grid-cols-2! lg:grid-cols-3! gap-6">
           {[...stories].reverse().map((story, idx) => {
             const imageUrl = convertToDirectDownload(story.imageUrl);
             const isExpanded = expandedIndexes[idx];
